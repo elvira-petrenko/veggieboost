@@ -1,0 +1,296 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+@use "../utils/extends" as *;
+
+.order {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: $color-text;
+  overflow-y: auto;
+
+  &[open] {
+    display: grid;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &::backdrop {
+    background-color: rgba($color-text, 0.5);
+  }
+
+  &__container {
+    @include container;
+    @include grid;
+    margin-block: auto;
+    padding-block: 20px;
+  }
+
+  &__window {
+    position: relative;
+    grid-column: 1 / -1;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: $color-background;
+
+    @include desktop {
+      grid-column: 2 / 8;
+    }
+  }
+
+  &__header {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 20px;
+
+    @include tablet {
+      padding: 40px 40px 0;
+    }
+  }
+
+  &__close {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    color: $color-text;
+
+    @include hover(color, $color-orange);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+    }
+
+    &::before {
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+
+  &__form {
+    display: grid;
+    row-gap: 40px;
+    padding: 20px;
+
+    @include tablet {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 3fr);
+      padding: 0;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__baskets {
+    display: grid;
+    grid-column: 1 / -1;
+    gap: 12px;
+
+    @include tablet {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      padding: 0 40px;
+    }
+  }
+
+  &__baskets > &__error {
+    grid-column: 1 / -1;
+  }
+
+  // мобилка: слева название и тип, справа чекбокс сверху и картинка под ним
+  &__basket {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "info check"
+      "info image";
+    padding: 14px 14px 8px 20px;
+    border-radius: 20px;
+    background-color: $color-beige;
+
+    // планшет и десктоп: чекбокс сверху, под ним название и тип, внизу картинка
+    @include tablet {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "check"
+        "info"
+        "image";
+      padding: 14px 14px 20px 20px;
+    }
+  }
+
+  &__checkbox {
+    grid-area: check;
+    align-self: start;
+    justify-self: end;
+    appearance: none;
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid $color-green;
+    border-radius: 4px;
+    background-color: $color-background;
+    transition: background-color $transition-duration $transition-easing;
+
+    &:checked {
+      background-color: $color-green;
+      box-shadow: inset 0 0 0 3px $color-background;
+    }
+  }
+
+  // название и тип в одной ячейке, поэтому они стоят друг под другом и не растягивают карточку
+  &__basket-info {
+    grid-area: info;
+    display: grid;
+    align-content: start;
+    row-gap: 4px;
+    padding-top: 7px;
+
+    @include tablet {
+      padding-top: 12px;
+    }
+  }
+
+  &__basket-name {
+    @extend %main-text;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    white-space: nowrap;
+  }
+
+  &__basket-type {
+    @extend %text-small;
+  }
+
+  &__basket-image {
+    grid-area: image;
+    display: block;
+    align-self: end;
+    justify-self: end;
+    width: 94px;
+
+    @include tablet {
+      justify-self: center;
+      width: 100%;
+      margin: 12px 0 0;
+    }
+  }
+
+  &__fields {
+    display: grid;
+    align-content: start;
+    gap: 12px;
+
+    @include tablet {
+      padding: 0 40px 40px;
+    }
+  }
+
+  &__field {
+    display: grid;
+  }
+
+  &__error {
+    font-size: 12px;
+    line-height: 14px;
+    color: $color-orange;
+  }
+
+  &__status {
+    font-size: 14px;
+    line-height: 18px;
+
+    &[data-state="success"] {
+      color: $color-green-dark;
+    }
+
+    &[data-state="error"] {
+      color: $color-orange;
+    }
+  }
+
+  &__input,
+  &__textarea {
+    @extend %main-text;
+    width: 100%;
+    border: 1px solid rgba($color-text, 0.3);
+    background-color: $color-background;
+    transition: border-color $transition-duration $transition-easing;
+
+    &::placeholder {
+      color: rgba($color-text, 0.5);
+    }
+
+    &:focus-visible,
+    &[aria-invalid="true"] {
+      border-color: $color-orange;
+      outline: none;
+    }
+  }
+
+  &__input {
+    padding: 15px 0 15px 25px;
+    border-radius: 100px;
+  }
+
+  &__textarea {
+    padding: 14px 20px;
+    border-radius: 16px;
+    resize: vertical;
+  }
+
+  &__submit {
+    @extend %button;
+    justify-self: start;
+    padding: 14px 32px;
+    border-radius: 24px;
+    background-color: $color-orange;
+    color: $color-white;
+    text-transform: none;
+
+    @include hover(opacity, 0.85);
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include tablet {
+      display: block;
+      grid-column: 2;
+      grid-row: 3;
+      align-self: end;
+      justify-self: start;
+      max-width: none;
+    }
+  }
+}

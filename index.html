@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VeggieBoost - fresh organic vegetables delivered to your door</title>
+    <meta
+      name="description"
+      content="Fresh, high-quality vegetable baskets delivered to your door. Choose your basket, fill out the form and enjoy the best that nature has to offer."
+    />
+    <link rel="stylesheet" href="/src/scss/main.scss" />
+  </head>
+
+  <body class="page__body">
+    <!---------- SVG sprite ---------->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      style="display: none"
+      aria-hidden="true"
+    >
+      <symbol id="icon-cart" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z"
+          fill="currentColor"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z"
+          fill="currentColor"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </svg>
+
+    <!---------- Header ---------->
+    <header class="header">
+      <div class="container header__container">
+        <a href="./" class="header__logo" aria-label="VeggieBoost home">
+          <img
+            src="/src/assets/images/header/logo.svg"
+            alt="VeggieBoost"
+            class="header__logo-image"
+            width="118"
+            height="18"
+          />
+        </a>
+        <!---------- Nav menu  ---------->
+        <nav class="header__nav" aria-label="Main navigation">
+          <ul class="header__list">
+            <li class="header__item">
+              <a href="#how-it-works" class="header__link">How It Works</a>
+            </li>
+
+            <li class="header__item">
+              <a href="#vegetables" class="header__link">Vegetables</a>
+            </li>
+
+            <li class="header__item">
+              <a href="#contacts" class="header__link">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="header__cart"
+          type="button"
+          aria-label="Open shopping cart"
+          data-order-open
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            class="header__cart-icon"
+            width="24"
+            height="24"
+          >
+            <use href="#icon-cart"></use>
+          </svg>
+        </button>
+
+        <!--------------- Burger menu ---------->
+        <button
+          class="header__burger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="header__burger-line" aria-hidden="true"></span>
+          <span class="header__burger-line" aria-hidden="true"></span>
+          <span class="header__burger-line" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <!---------- Menu mobile ---------->
+    <div
+      class="mobile-menu"
+      id="mobile-menu"
+      aria-label="Mobile menu"
+      aria-hidden="true"
+    >
+      <div class="mobile-menu__top">
+        <a href="./" class="mobile-menu__logo" aria-label="VeggieBoost home">
+          <img
+            src="/src/assets/images/header/logo.svg"
+            alt="VeggieBoost"
+            class="mobile-menu__logo-image"
+          />
+        </a>
+
+        <button
+          class="mobile-menu__close"
+          type="button"
+          aria-label="Close menu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="mobile-menu__content">
+        <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a href="#how-it-works" class="mobile-menu__link">How It Works</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="#vegetables" class="mobile-menu__link">Vegetables</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="#contacts" class="mobile-menu__link">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="mobile-menu__cart"
+          type="button"
+          aria-label="Open shopping cart"
+          data-order-open
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            class="mobile-menu__cart-icon"
+            width="24"
+            height="24"
+          >
+            <use href="#icon-cart"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <main class="main">
+      <!---------- Hero section ---------->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <div class="hero__users">
+              <div class="hero__user-list" aria-hidden="true">
+                <div class="hero__user">
+                  <img
+                    src="/src/assets/images/hero/user-1.jpg"
+                    alt=""
+                    class="hero__user-img"
+                    width="66"
+                    height="66"
+                  />
+                </div>
+                <div class="hero__user">
+                  <img
+                    src="/src/assets/images/hero/user-2.jpg"
+                    alt=""
+                    class="hero__user-img"
+                    width="66"
+                    height="66"
+                  />
+                </div>
+                <div class="hero__user">
+                  <img
+                    src="/src/assets/images/hero/user-3.jpg"
+                    alt=""
+                    class="hero__user-img"
+                    width="66"
+                    height="66"
+                  />
+                </div>
+              </div>
+              <div class="hero__reviews">
+                <span class="hero__reviews-count">2k</span>
+                <span class="hero__reviews-text">reviews</span>
+              </div>
+            </div>
+
+            <h1 class="hero__title" id="hero-title">
+              <span>organic</span>
+              <span class="hero__title-accent">vegetables</span>
+              <span class="hero__title-line">to your diet today!</span>
+            </h1>
+
+            <p class="hero__description">
+              Our expertly curated vegetable baskets are made with the freshest,
+              highest quality vegetables available. Fresh Harvest Box has got
+              you covered. Fresh, high-quality vegetables in expertly curated
+              vegetable baskets delivered to you.
+            </p>
+
+            <a href="#vegetables" class="hero__button">shop now</a>
+          </div>
+
+          <div class="hero__media">
+            <div class="hero__image-wrapper">
+              <img
+                src="/src/assets/images/hero/hero-girl.png"
+                alt="Woman holding fresh vegetables"
+                class="hero__image"
+                width="303"
+                height="236"
+              />
+            </div>
+
+            <nav class="hero__nav" aria-label="Hero navigation">
+              <a href="#vegetables" class="hero__nav-link hero__nav-link--active"
+                >#organic</a
+              >
+              <a href="#delivery" class="hero__nav-link">#products</a>
+              <a href="#order-details" class="hero__nav-link">#basket</a>
+              <a href="#vegetables" class="hero__nav-link">#vegetables</a>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <!---------- Order details section ---------->
+      <section class="order-details" id="order-details" aria-labelledby="order-details-title">
+        <div class="container order-details__container">
+          <h2 class="order-details__title" id="order-details-title">
+            To order your vegetable basket, simply follow these easy steps
+          </h2>
+          <div class="order-details__image-wrapper">
+            <img
+              src="/src/assets/images/order-details/vegetables.png"
+              alt="Fresh vegetables in a basket"
+              class="order-details__image"
+              width="410"
+              height="170"
+            />
+          </div>
+          <div class="order-details__descriptions">
+            <p class="order-details__description">
+              Our baskets are assembled with care and delivered straight to your
+              doorstep, so you can enjoy the taste of fresh fruit without ever
+              leaving your home.
+            </p>
+            <p class="order-details__description">
+              Whether you're looking for a healthy snack or a thoughtful gift,
+              our fruit baskets are the perfect choice.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!---------- How it works section ---------->
+      <section
+        class="how-it-works"
+        id="how-it-works"
+        aria-labelledby="how-it-works-title"
+      >
+        <div class="container how-it-works__container">
+          <div class="how-it-works__card">
+            <div class="how-it-works__content">
+              <h2 class="how-it-works__title" id="how-it-works-title">
+                3 Easy Steps for Buying Fresh Vegetables
+              </h2>
+
+              <ol class="how-it-works__list">
+                <li class="how-it-works__item">
+                  <span class="how-it-works__number" aria-hidden="true">1</span>
+                  <p class="how-it-works__description">
+                    Just choose the vegetable you want to order by clicking on
+                    the checkboxes next to it.
+                  </p>
+                </li>
+
+                <li class="how-it-works__item">
+                  <span class="how-it-works__number" aria-hidden="true">2</span>
+                  <p class="how-it-works__description">
+                    Click on the basket and fill out the form.
+                  </p>
+                </li>
+                <li class="how-it-works__item">
+                  <span class="how-it-works__number" aria-hidden="true">3</span>
+                  <p class="how-it-works__description">
+                    Sit back and relax! Your fresh vegetables basket will be
+                    delivered.
+                  </p>
+                </li>
+              </ol>
+            </div>
+
+            <div class="how-it-works__image-wrapper">
+              <img
+                src="/src/assets/images/how-it-works/girl.png"
+                alt="Girl holding lettuce leaves"
+                class="how-it-works__image"
+                width="420"
+                height="420"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!---------- Ticker section ---------->
+      <section class="ticker" aria-label="Discount announcement">
+        <div class="ticker__band ticker__band--orange">
+          <div class="ticker__track">
+            <p class="ticker__text">
+              Discount up to <em>40%</em>! Taste the vitamins and keep your
+              health
+            </p>
+            <p class="ticker__text" aria-hidden="true">
+              Discount up to <em>40%</em>! Taste the vitamins and keep your
+              health
+            </p>
+            <p class="ticker__text" aria-hidden="true">
+              Discount up to <em>40%</em>! Taste the vitamins and keep your
+              health
+            </p>
+            <p class="ticker__text" aria-hidden="true">
+              Discount up to <em>40%</em>! Taste the vitamins and keep your
+              health
+            </p>
+            <p class="ticker__text" aria-hidden="true">
+              Discount up to <em>40%</em>! Taste the vitamins and keep your
+              health
+            </p>
+            <p class="ticker__text" aria-hidden="true">
+              Discount up to <em>40%</em>! Taste the vitamins and keep your
+              health
+            </p>
+          </div>
+        </div>
+        <div class="ticker__band ticker__band--green">
+          <div class="ticker__track">
+            <p class="ticker__text" aria-hidden="true">
+              Discount up to 40%! Taste <em>the vitamins</em> and keep your
+              health
+            </p>
+            <p class="ticker__text" aria-hidden="true">
+              Discount up to 40%! Taste <em>the vitamins</em> and keep your
+              health
+            </p>
+            <p class="ticker__text" aria-hidden="true">
+              Discount up to 40%! Taste <em>the vitamins</em> and keep your
+              health
+            </p>
+            <p class="ticker__text" aria-hidden="true">
+              Discount up to 40%! Taste <em>the vitamins</em> and keep your
+              health
+            </p>
+            <p class="ticker__text" aria-hidden="true">
+              Discount up to 40%! Taste <em>the vitamins</em> and keep your
+              health
+            </p>
+            <p class="ticker__text" aria-hidden="true">
+              Discount up to 40%! Taste <em>the vitamins</em> and keep your
+              health
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!---------- Vegetables section ---------->
+      <section
+        class="vegetables"
+        id="vegetables"
+        aria-labelledby="vegetables-title"
+      >
+        <div class="container vegetables__container">
+          <h2 class="vegetables__title" id="vegetables-title">
+            Organic vegetables
+          </h2>
+          <p class="vegetables__description">
+            Our organic vegetables are hand-picked from local farms and
+            delivered straight to your doorstep, ensuring that you get the
+            freshest and most nutritious produce possible.
+          </p>
+
+          <ul class="vegetables__list">
+            <li class="vegetables__item">
+              <h3 class="vegetables__name">Carrot</h3>
+              <p class="vegetables__type">Plant</p>
+              <img
+                src="/src/assets/images/vegetables/carrot.png"
+                alt="Carrot"
+                class="vegetables__image"
+                width="321"
+                height="289"
+              />
+              <p class="vegetables__price">100 UAH / kg</p>
+            </li>
+
+            <li class="vegetables__item">
+              <h3 class="vegetables__name">Brussel sprouts</h3>
+              <p class="vegetables__type">Plant</p>
+              <img
+                src="/src/assets/images/vegetables/brussel-sprouts.png"
+                alt="Brussel sprouts"
+                class="vegetables__image"
+                width="321"
+                height="289"
+              />
+              <p class="vegetables__price">80 UAH / kg</p>
+            </li>
+
+            <li class="vegetables__item">
+              <h3 class="vegetables__name">Tomato</h3>
+              <p class="vegetables__type">Plant</p>
+              <img
+                src="/src/assets/images/vegetables/tomato.png"
+                alt="Tomato"
+                class="vegetables__image"
+                width="321"
+                height="280"
+              />
+              <p class="vegetables__price">40 UAH / kg</p>
+            </li>
+
+            <li class="vegetables__item">
+              <h3 class="vegetables__name">Eggplant</h3>
+              <p class="vegetables__type">Plant</p>
+              <img
+                src="/src/assets/images/vegetables/eggplant.png"
+                alt="Eggplant"
+                class="vegetables__image"
+                width="321"
+                height="281"
+              />
+              <p class="vegetables__price">60 UAH / kg</p>
+            </li>
+
+            <li class="vegetables__item">
+              <h3 class="vegetables__name">Sweet potatoes</h3>
+              <p class="vegetables__type">Plant</p>
+              <img
+                src="/src/assets/images/vegetables/sweet-potatoes.png"
+                alt="Sweet potatoes"
+                class="vegetables__image"
+                width="339"
+                height="278"
+              />
+              <p class="vegetables__price">80 UAH / kg</p>
+            </li>
+
+            <li class="vegetables__item">
+              <h3 class="vegetables__name">Leek</h3>
+              <p class="vegetables__type">Plant</p>
+              <img
+                src="/src/assets/images/vegetables/leek.png"
+                alt="Leek"
+                class="vegetables__image"
+                width="321"
+                height="280"
+              />
+              <p class="vegetables__price">50 UAH / kg</p>
+            </li>
+
+            <li class="vegetables__item">
+              <h3 class="vegetables__name">Mushrooms</h3>
+              <p class="vegetables__type">Plant</p>
+              <img
+                src="/src/assets/images/vegetables/mushrooms.png"
+                alt="Mushrooms"
+                class="vegetables__image"
+                width="353"
+                height="279"
+              />
+              <p class="vegetables__price">40 UAH / kg</p>
+            </li>
+
+            <li class="vegetables__item">
+              <h3 class="vegetables__name">Corn</h3>
+              <p class="vegetables__type">Plant</p>
+              <img
+                src="/src/assets/images/vegetables/corn.png"
+                alt="Corn"
+                class="vegetables__image"
+                width="321"
+                height="281"
+              />
+              <p class="vegetables__price">60 UAH / kg</p>
+            </li>
+
+            <li class="vegetables__item vegetables__item--desktop-only">
+              <h3 class="vegetables__name">Radish</h3>
+              <p class="vegetables__type">Plant</p>
+              <img
+                src="/src/assets/images/vegetables/radish.png"
+                alt="Radish"
+                class="vegetables__image"
+                width="322"
+                height="286"
+              />
+              <p class="vegetables__price">90 UAH / kg</p>
+            </li>
+          </ul>
+
+          <button type="button" class="vegetables__order" data-order-open>
+            <img
+              src="/src/assets/images/vegetables/arrow.svg"
+              alt=""
+              class="vegetables__order-icon"
+              width="14"
+              height="14"
+            />
+            Order
+          </button>
+        </div>
+      </section>
+
+      <!---------- Delivery section ---------->
+      <section class="delivery" id="delivery" aria-labelledby="delivery-title">
+        <div class="container delivery__container">
+          <div class="delivery__inner">
+            <img
+              src="/src/assets/images/delivery/delivery.png"
+              alt=""
+              class="delivery__image"
+              width="578"
+              height="339"
+              loading="lazy"
+            />
+            <h2 class="delivery__title" id="delivery-title">
+              The best shipping for you!
+              <span class="delivery__accent delivery__accent--green">
+                Your products</span
+              >
+              always arrive in the
+              <span class="delivery__accent delivery__accent--orange">
+                best</span
+              >
+              conditions!
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <!---------- Callback section ---------->
+      <section class="callback" id="callback" aria-labelledby="callback-title">
+        <div class="container callback__container">
+          <div class="callback__inner">
+            <div class="callback__content">
+              <h2 class="callback__title" id="callback-title">
+                Fresh Harvest Box has got you covered
+              </h2>
+              <p class="callback__description">
+                Our boxes are packed with delicious, nutritious vegetables,
+                perfect for anyone looking to eat healthier or support local
+                farmers. Order your box today and start enjoying the best that
+                nature has to offer!
+              </p>
+
+              <form class="callback__form" id="callback-form" novalidate>
+                <label for="callback__phone" class="visually-hidden"
+                  >Phone number</label
+                >
+                <input
+                  type="tel"
+                  class="callback__input"
+                  id="callback__phone"
+                  name="phone"
+                  placeholder="+380 ()"
+                  autocomplete="tel"
+                  aria-describedby="callback-status"
+                  required
+                />
+                <button class="callback__button" type="submit">Recall</button>
+              </form>
+              <p class="callback__status" id="callback-status" role="status"></p>
+            </div>
+
+            <div class="callback__media">
+              <img
+                src="/src/assets/images/callback/callback.png"
+                alt=""
+                class="callback__image"
+                width="525"
+                height="499"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!---------- Footer ---------->
+    <footer class="footer" id="contacts">
+      <div class="container footer__container">
+        <div class="footer__brand">
+          <div class="footer__image-wrapper">
+            <img
+              src="/src/assets/images/footer/broccoli.png"
+              alt="Vegetables"
+              class="footer__image"
+              width="349"
+              height="179"
+              loading="lazy"
+            />
+          </div>
+          <a href="./" class="footer__logo" aria-label="VeggieBoost home">
+            <img
+              src="/src/assets/images/header/logo.svg"
+              alt="VeggieBoost"
+              class="footer__logo-image"
+              width="118"
+              height="18"
+            />
+          </a>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <ul class="footer__list">
+            <li>
+              <a href="#how-it-works" class="footer__link">How It Works</a>
+            </li>
+            <li><a href="#vegetables" class="footer__link">Vegetables</a></li>
+            <li><a href="#contacts" class="footer__link">Contacts</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__contacts">
+          <ul class="footer__socials">
+            <li>
+              <a
+                href="https://www.facebook.com"
+                class="footer__social"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/src/assets/images/footer/facebook.svg"
+                  alt=""
+                  class="footer__social-icon"
+                  width="44"
+                  height="44"
+                />
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.instagram.com"
+                class="footer__social"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/src/assets/images/footer/instagram.svg"
+                  alt=""
+                  class="footer__social-icon"
+                  width="44"
+                  height="44"
+                />
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.youtube.com"
+                class="footer__social"
+                aria-label="YouTube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/src/assets/images/footer/youtube.svg"
+                  alt=""
+                  class="footer__social-icon"
+                  width="44"
+                  height="44"
+                />
+              </a>
+            </li>
+          </ul>
+
+          <a href="tel:+380684439426" class="footer__phone"
+            >+380 (68) 443-94-26</a
+          >
+          <address class="footer__address">
+            1678 S. Pioneer Road<br />Salt Lake City<br />UT 84104
+          </address>
+        </div>
+      </div>
+    </footer>
+
+    <!---------- Order button ---------->
+    <dialog class="order" aria-labelledby="order-title" autofocus>
+      <div class="container order__container">
+        <div class="order__window">
+          <form class="order__form" id="order-form" novalidate>
+            <div class="order__header">
+              <h2 class="order__title" id="order-title">Your Order</h2>
+              <button
+                type="button"
+                class="order__close"
+                aria-label="Close order form"
+              ></button>
+            </div>
+
+            <div
+              class="order__baskets"
+              role="group"
+              aria-label="Choose baskets"
+            >
+              <label class="order__basket">
+                <input
+                  type="checkbox"
+                  name="basket"
+                  value="cabbage"
+                  class="order__checkbox"
+                />
+                <span class="order__basket-info">
+                  <span class="order__basket-name">Cabbage Basket</span>
+                  <span class="order__basket-type">Plant</span>
+                </span>
+                <img
+                  src="/src/assets/images/vegetables/cabbage-basket.png"
+                  alt=""
+                  class="order__basket-image"
+                  loading="lazy"
+                  width="243"
+                  height="200"
+                />
+              </label>
+
+              <label class="order__basket">
+                <input
+                  type="checkbox"
+                  name="basket"
+                  value="tomato"
+                  class="order__checkbox"
+                />
+                <span class="order__basket-info">
+                  <span class="order__basket-name">Tomato Basket</span>
+                  <span class="order__basket-type">Plant</span>
+                </span>
+                <img
+                  src="/src/assets/images/vegetables/tomato-basket.png"
+                  alt=""
+                  class="order__basket-image"
+                  loading="lazy"
+                  width="243"
+                  height="200"
+                />
+              </label>
+
+              <label class="order__basket">
+                <input
+                  type="checkbox"
+                  name="basket"
+                  value="vegetables"
+                  class="order__checkbox"
+                />
+                <span class="order__basket-info">
+                  <span class="order__basket-name">Vegetables Basket</span>
+                  <span class="order__basket-type">Plant</span>
+                </span>
+                <img
+                  src="/src/assets/images/vegetables/vegetables-basket.png"
+                  alt=""
+                  class="order__basket-image"
+                  loading="lazy"
+                  width="243"
+                  height="200"
+                />
+              </label>
+
+              <p class="order__error" data-error-for="basket" role="alert"></p>
+            </div>
+
+            <div class="order__fields">
+              <div class="order__field">
+                <input
+                  type="text"
+                  name="name"
+                  class="order__input"
+                  placeholder="Enter full name..."
+                  aria-label="Full name"
+                  autocomplete="name"
+                />
+                <p class="order__error" data-error-for="name" role="alert"></p>
+              </div>
+
+              <div class="order__field">
+                <input
+                  type="email"
+                  name="email"
+                  class="order__input"
+                  placeholder="Enter email..."
+                  aria-label="Email"
+                  autocomplete="email"
+                />
+                <p class="order__error" data-error-for="email" role="alert"></p>
+              </div>
+
+              <div class="order__field">
+                <input
+                  type="text"
+                  name="card"
+                  class="order__input"
+                  placeholder="Enter card.."
+                  aria-label="Card number"
+                  autocomplete="cc-number"
+                  inputmode="numeric"
+                />
+                <p class="order__error" data-error-for="card" role="alert"></p>
+              </div>
+
+              <textarea
+                name="comments"
+                class="order__textarea"
+                placeholder="Enter comments..."
+                aria-label="Comments"
+                rows="5"
+              ></textarea>
+
+              <button type="submit" class="order__submit">Submit</button>
+              <p class="order__status" role="status"></p>
+            </div>
+            <img
+              src="/src/assets/images/vegetables/girl.png"
+              alt=""
+              class="order__image"
+              loading="lazy"
+              width="444"
+              height="413"
+            />
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <script type="module" src="/src/scripts/main.js"></script>
+  </body>
+</html>

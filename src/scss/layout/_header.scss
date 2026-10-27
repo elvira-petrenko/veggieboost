@@ -1,0 +1,132 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+@use "../utils/extends" as *;
+
+.header {
+  position: fixed;
+  z-index: $z-header;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height;
+  padding: 13px 0;
+  background-color: $color-background;
+
+  &__container {
+    @include grid;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__logo {
+    grid-column: 1 / 3;
+    justify-self: start;
+
+    @include tablet {
+      grid-column: 2 / 4;
+      grid-row: 1;
+      justify-self: center;
+    }
+
+    @include desktop {
+      grid-column: 4 / 6;
+    }
+  }
+
+  &__logo-image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__nav {
+    display: none;
+
+    @include tablet {
+      display: block;
+      grid-column: 1 / 3;
+      grid-row: 1;
+      justify-self: start;
+    }
+
+    @include desktop {
+      grid-column: 1 / 4;
+    }
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    @extend %text-small;
+    @include hover(color, $color-orange);
+  }
+
+  &__cart {
+    display: none;
+
+    @include hover(color, $color-orange);
+
+    @include tablet {
+      display: inline-flex;
+      grid-column: 4;
+      grid-row: 1;
+      align-items: center;
+      justify-content: center;
+      justify-self: end;
+    }
+
+    @include desktop {
+      grid-column: 7 / 9;
+    }
+  }
+
+  &__cart-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__burger {
+    display: inline-flex;
+    grid-column: 4;
+    justify-self: end;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    width: 24px;
+    height: 24px;
+    color: $color-green-dark;
+
+    @include hover(color, $color-orange);
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__burger-line {
+    display: block;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 2px;
+
+    &:nth-child(1) {
+      width: 14px;
+    }
+
+    &:nth-child(2) {
+      width: 20px;
+    }
+
+    &:nth-child(3) {
+      width: 16px;
+    }
+  }
+}

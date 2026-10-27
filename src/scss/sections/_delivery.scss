@@ -1,0 +1,51 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+@use "../utils/extends" as *;
+
+.delivery {
+  &__container {
+    @include grid;
+  }
+
+  &__inner {
+    @include grid;
+    @include dots-background;
+    grid-column: 1 / -1;
+    align-items: center;
+    row-gap: 40px;
+    border-radius: 40px;
+    padding: 80px 20px;
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    @include desktop {
+      display: block;
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include desktop {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__accent {
+    font-style: italic;
+
+    &--green {
+      color: $color-green;
+    }
+
+    &--orange {
+      color: $color-orange;
+    }
+  }
+}

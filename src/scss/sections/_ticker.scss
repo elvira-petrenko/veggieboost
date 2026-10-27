@@ -1,0 +1,97 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+@use "../utils/extends" as *;
+
+.ticker {
+  display: grid;
+  overflow-x: clip; // скрываем края лент, чтобы не было горизонтального скролла
+  padding-block: 40px;
+
+  @include desktop {
+    padding-block: 60px;
+  }
+
+  // обе ленты лежат в одной ячейке, друг на друге
+  &__band {
+    grid-area: 1 / 1;
+    justify-self: center;
+    width: 120%; // шире экрана, чтобы концы лент не были видны
+    overflow: hidden;
+    padding-block: 14px;
+
+    @include tablet {
+      padding-block: 16px;
+    }
+
+    @include desktop {
+      padding-block: 32px;
+    }
+
+    // оранжевая лента опускается вправо, зелёная поднимается; пересекаются у правого края
+    &--orange {
+      background-color: $color-orange;
+      transform: translateY(-13px) rotate(4deg);
+
+      @include tablet {
+        transform: translateY(-13px) rotate(2deg);
+      }
+
+      @include desktop {
+        transform: translateY(-34px) rotate(3deg);
+      }
+    }
+
+    &--green {
+      background-color: rgba($color-green, 0.8);
+      transform: translateY(23px) rotate(-7deg);
+
+      @include tablet {
+        transform: translateY(27px) rotate(-4deg);
+      }
+
+      @include desktop {
+        transform: translateY(45px) rotate(-4deg);
+      }
+    }
+  }
+
+  &__track {
+    display: flex;
+    width: max-content;
+    animation: ticker 40s linear infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  // зелёная лента бежит в обратную сторону
+  &__band--green &__track {
+    animation-direction: reverse;
+  }
+
+  &__text {
+    flex-shrink: 0;
+    padding-right: 2em;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: $color-white;
+    white-space: nowrap;
+
+    @include tablet {
+      font-size: 28px;
+    }
+
+    @include desktop {
+      font-size: 40px;
+    }
+  }
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,51 @@
+// ------------- Colors ------------- //
+$color-white: #ffffff;
+$color-text: #141414;
+$color-background: $color-white;
+
+$color-green: #a1c487;
+$color-green-light: #eaf7e5;
+$color-green-dark: #77ac63;
+$color-orange: #fc8a11;
+$color-beige: #faf3e7;
+$color-cream: #f9f7f4;
+$color-gray: #f3f3f3;
+
+// ------------- Fonts ------------- //
+$ff-main: "DM Sans", sans-serif;
+
+// ------------- Motion ------------- //
+$transition-duration: 0.3s;
+$transition-easing: ease;
+
+// ------------- Z-index ------------- //
+$z-header: 100;
+$z-mobile-menu: 110;
+
+// ------------- Breakpoints ------------- //
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1280px;
+
+// ------------- Header ------------- //
+$header-height: 50px;
+
+// ------------- Container ------------- //
+$container-max-width: 1216px;
+
+// ------------- Section Spacing ------------- //
+$section-spacing-mobile: 80px;
+$section-spacing-tablet: 100px;
+$section-spacing-desktop: 124px;
+
+// ------------- Grid ------------- //
+$grid-columns-mobile: 4;
+$grid-columns-tablet: 4;
+$grid-columns-desktop: 8;
+
+$grid-gutter-mobile: 20px;
+$grid-gutter-tablet: 32px;
+$grid-gutter-desktop: 32px;
+
+$grid-margin-mobile: 20px;
+$grid-margin-tablet: 32px;
+$grid-margin-desktop: 32px;

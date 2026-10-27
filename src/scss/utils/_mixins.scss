@@ -1,0 +1,105 @@
+@use "./vars" as *;
+
+// ------------- Breakpoints ------------- //
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+// ------------- Hover ------------- //
+@mixin hover($property, $value) {
+  transition: $property $transition-duration $transition-easing;
+
+  &:focus-visible {
+    #{$property}: $value;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      #{$property}: $value;
+    }
+  }
+}
+
+// меняет сразу фон и цвет текста
+@mixin hover-colors($background, $color) {
+  transition:
+    background-color $transition-duration $transition-easing,
+    color $transition-duration $transition-easing;
+
+  &:focus-visible {
+    background-color: $background;
+    color: $color;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $background;
+      color: $color;
+    }
+  }
+}
+// ------------- Container ------------- //
+
+@mixin container {
+  width: 100%;
+  max-width: $container-max-width + $grid-margin-desktop * 2;
+  margin-inline: auto;
+  padding-inline: $grid-margin-mobile;
+
+  @include tablet {
+    padding-inline: $grid-margin-tablet;
+  }
+
+  @include desktop {
+    padding-inline: $grid-margin-desktop;
+  }
+}
+
+// ------------- Grid ------------- //
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns-mobile, minmax(0, 1fr));
+  column-gap: $grid-gutter-mobile;
+
+  @include tablet {
+    grid-template-columns: repeat($grid-columns-tablet, minmax(0, 1fr));
+    column-gap: $grid-gutter-tablet;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat($grid-columns-desktop, minmax(0, 1fr));
+    column-gap: $grid-gutter-desktop;
+  }
+}
+
+// ------------- Section Spacing ------------- //
+@mixin section-spacing {
+  gap: $section-spacing-mobile;
+
+  @include tablet {
+    gap: $section-spacing-tablet;
+  }
+
+  @include desktop {
+    gap: $section-spacing-desktop;
+  }
+}
+
+// ------------- Dots Background ------------- //
+@mixin dots-background {
+  background-color: $color-beige;
+  background-image: radial-gradient(
+    circle, 
+    rgba($color-green, 0.69) 2.5px,
+    transparent 3px
+  );
+  background-size: 41px 41px;
+}

@@ -1,0 +1,93 @@
+@use "./mixins" as *;
+
+%h1 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 44px;
+  letter-spacing: -0.04em;
+
+  @include tablet {
+    font-size: 54px;
+    line-height: 64px;
+  }
+  @include desktop {
+    font-size: 64px;
+    line-height: 75px;
+  }
+}
+
+%h2 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+
+  @include tablet {
+    font-size: 40px;
+    line-height: 44px;
+  }
+  @include desktop {
+    font-size: 48px;
+    line-height: 50px;
+  }
+}
+
+%h3 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -0.04em;
+
+  @include tablet {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  @include desktop {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+
+%main-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+
+  @include tablet {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+%text-small {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.04rem;
+}
+
+%button {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+
+  @include tablet {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+%visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}

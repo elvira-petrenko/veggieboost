@@ -1,0 +1,15 @@
+@use "../utils/vars" as *;
+html {
+  scroll-padding-top: $header-height; // фиксированный хедер не закрывает начало блока при переходе по якорю
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+.page__body {
+  // страница не прокручивается, пока открыто мобильное меню
+  &--locked {
+    overflow: hidden;
+  }
+}

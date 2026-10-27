@@ -1,0 +1,93 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+@use "../utils/extends" as *;
+
+.how-it-works {
+  &__card {
+    @include grid;
+    @include dots-background;
+    padding: 40px 20px 0;
+    border-radius: 40px;
+    
+    @include tablet {
+      padding: 40px 40px 0 0;
+      border-radius: 80px;
+    }
+  }
+
+  &__content {
+    @include grid;
+    grid-column: 1 / -1;
+    padding-bottom: 20px;
+
+    @include tablet {
+      display: block;
+      grid-column: 3 / -1;
+      grid-row: 1;
+      align-self: center;
+      padding: 40px 40px 40px 0;
+    }
+
+    @include desktop {
+      grid-column: 5 / 8;
+    }
+  }
+
+  &__title {
+    @extend %h3;
+    grid-column: 1 / -1;
+    padding-bottom: 40px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    display: grid;
+    grid-column: 1 / 4;
+    gap: 20px;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 14px;
+  }
+
+  &__number {
+    @extend %main-text;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: $color-green;
+    font-size: 18px;
+
+    @include tablet {
+      width: 46px;
+      height: 44px;
+    }
+  }
+
+  &__description {
+    @extend %main-text;
+  }
+
+  &__image-wrapper {
+    grid-column: 1 / -1;
+    align-self: center;
+
+    @include tablet {
+      grid-column: 1 / 3;
+      align-self: end;
+    }
+
+    @include desktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "veggieboost",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VeggieBoost landing page",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elvira-petrenko/veggieboost.git"
+  },
+  "keywords": [
+    "landing-page",
+    "html",
+    "scss",
+    "bem",
+    "vite"
+  ],
+  "author": "Elvira Petrenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elvira-petrenko/veggieboost/issues"
+  },
+  "homepage": "https://github.com/elvira-petrenko/veggieboost#readme",
+  "devDependencies": {
+    "sass": "^1.105.0",
+    "vite": "^8.3.1"
+  }
+}

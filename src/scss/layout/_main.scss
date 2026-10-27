@@ -1,0 +1,8 @@
+@use "../utils/mixins" as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  @include section-spacing;
+}
