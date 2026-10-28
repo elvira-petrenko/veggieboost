@@ -4,6 +4,8 @@ A responsive landing page for a fresh vegetable delivery shop, built from a Figm
 
 **[View live demo](https://elvira-petrenko.github.io/veggieboost/)**
 
+![VeggieBoost preview](docs/preview.png)
+
 ## Features
 
 - Responsive layout: 4-column grid on mobile and tablet, 8-column grid on desktop
