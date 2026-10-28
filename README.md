@@ -1,38 +1,43 @@
 # VeggieBoost
- 
-Landing page, верстка по макету из Figma. HTML, SCSS (BEM), Vite.
 
-## Что внутри
+A responsive landing page for a fresh vegetable delivery shop, built from a Figma design with HTML, SCSS (BEM) and vanilla JavaScript.
 
-- Адаптивная сетка: 4 колонки на мобильной и планшете, 8 на десктопе
-- Мобильное меню и попап заказа на нативном `<dialog>`
-- Форма заказа с проверкой полей и сообщениями об ошибках
-- Бегущие ленты на CSS-анимации (учитывают `prefers-reduced-motion`)
-- Семантическая разметка и доступность: ARIA-атрибуты, фокус с клавиатуры
- 
-## Стек
+**[View live demo](https://elvira-petrenko.github.io/veggieboost/)**
 
-HTML5, SCSS (BEM, `@use`), JavaScript (ES-модули), Vite
+## Features
 
-## Запуск
- 
+- Responsive layout: 4-column grid on mobile and tablet, 8-column grid on desktop
+- Mobile menu and order popup built on the native `<dialog>` element
+- Order form and callback form with field validation and error messages
+- CSS-only marquee tickers that respect `prefers-reduced-motion`
+- Semantic HTML and accessibility: ARIA attributes, visible keyboard focus
+
+## Tech stack
+
+HTML5, SCSS (BEM, HTML, Smodules), JavaScript (ES modules), Vite
+
+## Getting started
+
 ```bash
 npm install
-npm run dev      # разработка
-npm run build    # сборка в dist/
-npm run preview  # посмотреть собранную версию
+npm run dev      # start the dev server
+npm run build    # production build into dist/
+npm run preview  # preview the production build
 ```
- 
-## Структура
- 
+## Proeject structure 
+
 ```
 src/
-  assets/        шрифты и изображения
-  scripts/       main.js (меню), order.js (попап заказа)
+  assets/        fonts and images
+  scripts/       main.js (menu), order.js (order popup), callback.js (callback form)
   scss/
-    base/        reset, шрифты, типографика, утилиты
-    utils/       переменные, миксины, extends
+    base/        reset, fonts, typography, utilities
+    utils/       variables, mixins, extends
     layout/      page, container, header, main, footer
     components/  mobile-menu, order
     sections/    hero, order-details, how-it-works, ticker, vegetables, delivery, callback
 ```
+
+## Author
+
+Elvira Petrenko · [GitHub](https://github.com/elvira-petrenko)
